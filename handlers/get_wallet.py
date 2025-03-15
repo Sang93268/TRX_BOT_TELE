@@ -18,9 +18,8 @@ def get_balance(address):
         headers = {"TRON-PRO-API-KEY": TRONGRID_API_KEY}
         response = requests.get(f"{TRONGRID_API_URL}{address}", headers=headers)
         data = response.json()
-
         if "data" in data and len(data["data"]) > 0:
-            balance = data["data"][0].get("balance", 0) / 1e6  # Chuyển từ SUN -> TRX
+            balance = data["data"][0].get("balance", 0) / 1e6
             return balance
         else:
             return "⚠️ Không tìm thấy thông tin ví!"
