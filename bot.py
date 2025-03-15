@@ -18,8 +18,6 @@ def main():
         dispatcher.add_handler(CommandHandler("createwallet", create_wallet_command))
         dispatcher.add_handler(CommandHandler("balance", check_balance_command))
         dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_message))
-        # Lưu ý: CommandHandler("getbalance", get_balance) không hợp lý vì get_balance không phải handler
-        # Nếu muốn dùng, hãy tạo một handler riêng thay vì gọi trực tiếp get_balance
 
         # Bắt đầu bot
         updater.start_polling()
