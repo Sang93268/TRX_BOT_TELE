@@ -1,17 +1,20 @@
 import logging
+import os
+from dotenv import load_dotenv
 
-# 🔹 API Key TrongGrid
-TRONGRID_API_KEY = "abd3c7d2-212d-498f-b552-acd61ed78fbd"
-TRONGRID_API_URL = "https://nile.trongrid.io/v1/accounts/"
+# Tải biến môi trường từ file .env
+load_dotenv()
 
-# 🔹 Token Telegram Bot
-BOT_TOKEN = "7785074026:AAHJHMQiMKTrsPqpG3DCdWKYep25-YfHcfQ"  # 🔹 Thay bằng token của bạn
+# Lấy giá trị từ biến môi trường
+TRONGRID_API_KEY = os.getenv("TRONGRID_API_KEY")
+TRONGRID_API_URL = os.getenv("TRONGRID_API_URL")
 
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-DB_HOST = "localhost"
-DB_USER = "root"
-DB_PASSWORD = ""
-DB_NAME = "trx_bot"
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
 
 # Thiết lập logging
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
