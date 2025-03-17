@@ -5,6 +5,8 @@ from handlers.customer_care import customer_care
 from handlers.notification_balance import handle_notification_balance
 from handlers.check_wallet_handler import check_balance_command
 from handlers.tro_thanh_day_ly import tro_thanh_day_ly
+from handlers.mua_lenh import mua_lenh
+from handlers.swap import swap
 
 # Dictionary lưu trạng thái thông báo và địa chỉ ví theo user_id
 notification_status = {}
@@ -36,5 +38,9 @@ def handle_message(update: Update, context: CallbackContext):
         handle_notification_balance(update, context)
     elif command == "chucNang1":
         tro_thanh_day_ly(update, context)
+    elif command == "chucNang2":
+        mua_lenh(update, context)
+    elif command == "chucNang5":
+        swap(update, context)
     else:
         update.message.reply_text("⚠ Lệnh không hợp lệ, vui lòng chọn từ menu!")
