@@ -11,8 +11,8 @@ def create_wallet_command(update: Update, context: CallbackContext):
 
     if existing_wallet:
         update.message.reply_text(
-            f"😡 Ngu ngốc! Mày đã có ví rồi mà còn đòi nữa hả?\n"
-            f"🆔 *Địa chỉ ví của mày:* `{existing_wallet['address']}`",
+            f"😡 Xin Lỗi! Bạn đã có ví rồi mà còn muốn tạo nữa hả?\n"
+            f"🆔 *Địa chỉ ví của bạn:* `{existing_wallet['address']}`",
             parse_mode="Markdown"
         )
     else:
