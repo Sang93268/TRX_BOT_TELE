@@ -20,7 +20,7 @@ def handle_notification_balance(update: Update, context: CallbackContext):
                 interval=1,  # Chạy mỗi 30 giây
                 first=0,
                 context={"address": address, "user_id": user_id},
-                name=str(user_id)  # Tên job để dễ quản lý
+                name=str(user_id)  # Tên job để dễ quản lý hơn
             )
         except IndexError:
             update.message.reply_text("⚠ Vui lòng cung cấp địa chỉ ví theo cú pháp: YES Địa_chỉ_ví_của_bạn")
