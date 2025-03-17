@@ -4,10 +4,14 @@ from handlers.start_handler import start
 from handlers.createwallet import create_wallet_command
 from handlers.check_wallet_handler import check_balance_command
 from handlers.message_handler import handle_message
+from database_init import init_database
 
 def main():
     try:
         print("🚀 Đang khởi động bot...")
+
+        # Khởi tạo database và các bảng
+        init_database()
 
         # Tạo updater
         updater = Updater(BOT_TOKEN, use_context=True)
@@ -28,7 +32,7 @@ def main():
 
     except Exception as e:
         logger.error(f"Lỗi khởi động bot: {str(e)}")
-        raise  # Để dễ debug, bạn có thể raise lỗi lên
+        raise
 
 if __name__ == "__main__":
     main()
