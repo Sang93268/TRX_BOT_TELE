@@ -17,7 +17,7 @@ def handle_notification_balance(update: Update, context: CallbackContext):
             # Thêm job định kỳ
             context.job_queue.run_repeating(
                 check_new_transactions,
-                interval=30,  # Chạy mỗi 30 giây
+                interval=1,  # Chạy mỗi 30 giây
                 first=0,
                 context={"address": address, "user_id": user_id},
                 name=str(user_id)  # Tên job để dễ quản lý

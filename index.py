@@ -77,7 +77,7 @@ def handle_message(update: Update, context: CallbackContext):
     if text == "🆕 Tạo ví TRX":
         create_wallet_command(update, context)
     elif text == "💰 Kiểm tra số dư ví":
-        update.message.reply_text("📜 *Vui lòng nhập địa chỉ ví TRX để kiểm tra số dư.*\nVí dụ: `/balance Txxxxxx`", parse_mode="Markdown")
+        update.message.reply_text("📜 Vui lòng nhập địa chỉ ví TRX để kiểm tra số dư.\nVí dụ: `/balance Txxxxxx`", parse_mode="Markdown")
     else:
         update.message.reply_text("⚠ Lệnh không hợp lệ, vui lòng chọn từ menu!")
 

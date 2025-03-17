@@ -5,7 +5,7 @@ from handlers.get_wallet import get_balance
 def check_balance_command(update: Update, context: CallbackContext):
     # Nếu được gọi từ menu (không phải command)
     if not context.args:
-        update.message.reply_text("📜 *Vui lòng nhập địa chỉ ví TRX để kiểm tra số dư.*\nVí dụ: `/balance Txxxxxx`", parse_mode="Markdown")
+        update.message.reply_text("📜 Vui lòng nhập địa chỉ ví TRX để kiểm tra số dư.\nVí dụ: `/balance Txxxxxx`", parse_mode="Markdown")
         return
 
     # Nếu được gọi từ command /balance
